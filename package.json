@@ -1,9 +1,10 @@
 {
   "name": "vosk-broser-tutorial",
-  "module": "index.ts",
+  "module": "main.ts",
   "type": "module",
   "private": true,
   "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
     "@types/bun": "latest"
   },
   "peerDependencies": {
