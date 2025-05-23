@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "bunx serve public",
-    "build": "bun build src/main.ts --outdir public --target browser && cp public/_headers public/dist/ 2>/dev/null || true",
+    "build": "bun build src/main.ts --outdir public --target browser",
     "preview": "bunx serve public",
     "deploy": "bun run build"
   },
