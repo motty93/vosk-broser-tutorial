@@ -1,8 +1,14 @@
 {
-  "name": "vosk-broser-tutorial",
-  "module": "main.ts",
+  "name": "vosk-browser-tutorial",
+  "module": "src/main.ts",
   "type": "module",
   "private": true,
+  "scripts": {
+    "dev": "bunx serve public",
+    "build": "bun build src/main.ts --outdir public --target browser && cp public/_headers public/dist/ 2>/dev/null || true",
+    "preview": "bunx serve public",
+    "deploy": "bun run build"
+  },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@types/bun": "latest"
