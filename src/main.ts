@@ -7,7 +7,8 @@ async function init() {
 
   try {
     console.log('モデル読み込み中...')
-    const model = await createModel('/model/model.tar.gz')
+    // CDN経由でモデルを読み込み
+    const model = await createModel('https://alphacephei.com/vosk/models/vosk-model-small-ja-0.22.tar.gz')
     console.log('モデル読み込み完了')
 
     const rec: KaldiRecognizer = new model.KaldiRecognizer(SAMPLE_RATE)
@@ -65,7 +66,7 @@ async function init() {
     console.error('初期化エラー:', error)
     const caption = document.querySelector<HTMLDivElement>('#caption')
     if (caption) {
-      caption.textContent = `エラー: ${error.message}`
+      caption.textContent = `エラー: ${error}`
     }
   }
 }
